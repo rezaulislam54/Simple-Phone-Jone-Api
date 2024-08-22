@@ -9,19 +9,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body>
+<body class="container mx-auto px-5">
 
     <header>
         <h1 class="text-5xl text-center">All Phone Hear Please Search</h1>
     </header>
-    <section class="container mx-auto mt-16">
+    <section class=" my-16">
             <div class="bg-black mb-6 p-4">
                 <input id="searchField" type="text" placeholder="Search Your Product "class="input input-bordered input-primary w-full max-w-xs" />
-                <button onclick="handelerSearch()" class="btn btn-active btn-primary ml-2 bg-white text-black">Search</button>
+                <button onclick="handelerSearch()" class="btn btn-active btn-primary hover:bg-gray-300 ml-2 bg-white text-black">Search</button>
+            </div>
+
+            <!-- loading spiner -->
+            <div id="loading-container" class="hidden text-center ">
+                <span class="loading loading-spinner loading-lg"></span>
             </div>
 
         <div id="container-field" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
            
+        </div>
+
+        <!-- show all Products -->
+        <div id="showField" class="hidden mt-5 text-center">
+            <button onclick="handleShowAll()" class="btn btn-active btn-secondary">Show All</button>
         </div>
     </section>
 
