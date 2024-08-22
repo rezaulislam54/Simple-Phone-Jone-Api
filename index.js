@@ -36,11 +36,10 @@ const phoneDisplay = (pramitar, isShowAll) => {
                     alt="Shoes" />
                 </figure>
                 <div class="card-body">
-                    <h1 class="card-title ">${phone.phone_name}</h1>
-                    <h3>${phone.slug}</h3>
-                    <p>This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h1 class="card-title text-2xl ">${phone.phone_name}</h1>
+                    <h3 class="text-lg">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h3>
                     <div class="card-actions justify-center">
-                    <button class="btn btn-primary">Show Details</button>
+                    <button onclick="handleShowDetail('${phone.slug}')" class="btn btn-primary my-3">Show Details</button>
                     </div>
                 </div>
         `;
@@ -69,6 +68,16 @@ const handelerSearch = (isShowAll) => {
     const searchText = searchField.value;
     PhonLoader(searchText, isShowAll);
 }
+
+// show Dwtails button
+const handleShowDetail = async (id) => {
+    // console.log('click', id);
+    const revs = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await revs.json();
+    const phoneData = data.data;
+    console.log(phoneData);
+}
+
 
 const handleShowAll = () =>{
     handelerSearch(true);
