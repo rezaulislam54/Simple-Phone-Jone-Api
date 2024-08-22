@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Zone</title>
+    <!-- tailwind and daisy ui link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1 class="text-5xl text-center">All Phone Hear Please Search</h1>
+    </header>
+    <section class="container mx-auto mt-16">
+            <div class="bg-black mb-6 p-4">
+                <input id="searchField" type="text" placeholder="Search Your Product "class="input input-bordered input-primary w-full max-w-xs" />
+                <button onclick="handelerSearch()" class="btn btn-active btn-primary ml-2 bg-white text-black">Search</button>
+            </div>
+
+        <div id="container-field" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+           
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
